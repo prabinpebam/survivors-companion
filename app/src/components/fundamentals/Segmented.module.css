@@ -1,0 +1,86 @@
+/* A track holding a thumb. The track is as tall as the controls beside it; the options sit inside
+   it with an even inset, and the chosen one is a solid accent thumb whose corners follow the track's
+   (track radius minus the inset). No ring of its own, so it never meets the track's border. */
+.group {
+  display: inline-flex;
+  flex: none;
+  gap: var(--space-1);
+  box-sizing: border-box;
+  height: var(--c-shared-control-height);
+  padding: var(--space-1);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--c-shared-control-radius);
+  background: var(--color-bg-sunken);
+}
+
+.option {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  height: 100%;
+  min-width: calc(var(--c-shared-control-height) - var(--space-2));
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: calc(var(--c-shared-control-radius) - var(--space-1));
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard);
+}
+
+/* The press target reaches the track's full height, so it stays as tall as any control. */
+.option::after {
+  content: '';
+  position: absolute;
+  inset: calc((var(--space-1) + var(--border-width-thin)) * -1) 0;
+}
+
+.option[aria-checked='true'] {
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+  font-weight: var(--font-weight-semibold);
+  /* Invisible normally; forced colours draw it, so the choice still shows there. */
+  outline: var(--border-width-thin) solid transparent;
+}
+
+.option:focus-visible {
+  outline: var(--border-width-thick) solid var(--color-focus);
+  outline-offset: var(--border-width-thin);
+}
+
+.option:not([aria-checked='true']):active {
+  background: var(--color-bg-raised);
+}
+
+@media (hover: hover) {
+  .option:hover {
+    color: var(--color-text);
+  }
+
+  .option[aria-checked='true']:hover {
+    color: var(--color-text-on-accent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option {
+    transition: none;
+  }
+}
+
+@container (max-width: 40rem) {
+  .group[data-compact='true'] .text {
+    position: absolute;
+    width: var(--border-width-thin);
+    height: var(--border-width-thin);
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .group[data-compact='true'] .option {
+    padding: 0;
+  }
+}

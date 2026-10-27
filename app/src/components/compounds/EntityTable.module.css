@@ -1,0 +1,158 @@
+.frame {
+  max-width: 100%;
+  overflow-x: auto;
+  scroll-padding-inline-start: var(--pin-w, 0);
+  border: var(--border-width-thin) solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-raised);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+}
+
+/* Once a person resizes a column every column keeps its width; text past the edge is cut short. */
+.table[data-fixed='true'] {
+  table-layout: fixed;
+  width: var(--table-w);
+}
+
+.table[data-fixed='true'] col {
+  width: var(--col-w);
+}
+
+.table[data-fixed='true'] td,
+.table[data-fixed='true'] .nameCell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* For one synchronous read while fitting a column: every column at its natural width. */
+.table[data-measure='true'] {
+  table-layout: auto;
+  width: max-content;
+}
+
+.table[data-measure='true'] col {
+  width: auto;
+}
+
+.table td,
+.nameCell {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-width-thin) solid var(--color-border-subtle);
+  text-align: start;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table [data-numeric='true'] {
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+}
+
+.table tbody:last-child tr:last-child th,
+.table tbody:last-child tr:last-child td {
+  border-bottom: 0;
+}
+
+.table tbody tr[aria-current='true'] {
+  background: var(--color-bg-selected);
+}
+
+.nameCell {
+  position: sticky;
+  left: 0;
+  background: var(--color-bg-raised);
+  font-weight: var(--font-weight-medium);
+}
+
+.table tbody tr[aria-current='true'] .nameCell {
+  background: var(--color-bg-selected);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  min-height: var(--size-control);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .link:hover .name {
+    color: var(--color-accent);
+  }
+}
+
+.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* A group's header row: a clear break from the group above, the name, its count and a rule. */
+.groupHead {
+  padding: 0;
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+  text-align: start;
+}
+
+.table tbody + tbody .groupHead {
+  padding-top: var(--space-4);
+}
+
+.groupButton {
+  position: sticky;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--size-control);
+  padding: var(--space-1) var(--space-3);
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+}
+
+.groupButton:focus-visible {
+  outline-offset: calc(var(--border-width-thick) * -1);
+}
+
+.groupButton:active {
+  color: var(--color-accent);
+}
+
+@media (hover: hover) {
+  .groupButton:hover {
+    color: var(--color-accent);
+  }
+}
+
+.chevron {
+  display: inline-flex;
+  color: var(--color-text-muted);
+}
+
+.groupCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--size-badge);
+  height: var(--size-badge);
+  padding-inline: var(--space-2);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-tile);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+  font-weight: var(--font-weight-semibold);
+  font-variant-numeric: tabular-nums;
+}

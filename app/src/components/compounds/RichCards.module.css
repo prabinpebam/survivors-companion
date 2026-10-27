@@ -1,0 +1,185 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, calc(var(--size-tile-min) * 2.4)), 1fr));
+  gap: var(--space-3);
+  list-style: none;
+}
+
+.cards[data-look='tiles'] {
+  grid-template-columns: repeat(auto-fill, minmax(var(--size-tile-min), 1fr));
+}
+
+.cards[data-look='rows'] {
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--size-tile-min) * 1.2), 1fr));
+}
+
+@container (min-width: 40rem) {
+  .cards[data-look='rows'] {
+    grid-template-columns: repeat(auto-fill, minmax(calc(var(--size-tile-min) * 1.6), 1fr));
+  }
+}
+
+/* Records are short and alike: as many equal columns as fit at the shared minimum, each capped at the maximum. */
+.cards[data-look='records'] {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--c-shared-record-min)), 1fr));
+}
+
+.cards[data-look='records'] > .card {
+  max-width: var(--c-shared-record-max);
+}
+
+.caption {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+}
+
+/* A record's note, last and set apart by a hairline. */
+.note {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-top: var(--space-3);
+  border-top: var(--border-width-thin) solid var(--color-border-subtle);
+}
+
+/* A row's title: the thing the row is about (Level 3, Might +0.5%), loud. */
+.title {
+  font-size: var(--text-lg);
+  line-height: var(--leading-lg);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--font-tracking-display);
+  overflow-wrap: anywhere;
+}
+
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+}
+
+/* A two-column table's row reads as a stat: its name at body size, its value loud. */
+.card[data-stat='true'] .title {
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: normal;
+}
+
+.value {
+  font-size: var(--text-xl);
+  line-height: var(--leading-xl);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--font-tracking-display);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.fieldLabel {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+}
+
+.fieldValue {
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+  font-weight: var(--font-weight-semibold);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-4);
+  border-radius: var(--c-shared-tile-radius);
+  background: var(--color-bg-tile);
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+}
+
+/* A statement led by its stat: the picture in its own column, the words beside it. */
+.card[data-lead='picture'] {
+  display: grid;
+  grid-template-columns: var(--size-sprite-lg) 1fr;
+  align-items: start;
+  gap: var(--space-4);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.cards[data-look='tiles'] .head {
+  flex-direction: column;
+  text-align: center;
+}
+
+@media (hover: hover) {
+  a.head:hover .name {
+    color: var(--color-accent);
+  }
+}
+
+a.head:active .name {
+  color: var(--color-accent);
+}
+
+/* Pictures (often mobs) are only recognisable from 64px up: never smaller outside running text. */
+.pic {
+  flex: none;
+  width: var(--size-sprite-lg);
+  height: var(--size-sprite-lg);
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.name {
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+  font-weight: var(--font-weight-semibold);
+  overflow-wrap: anywhere;
+}
+
+.words {
+  overflow-wrap: anywhere;
+}
+
+/* Sub-points: one per line, separated by hairlines, muted below the card's own words. */
+.subs {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  color: var(--color-text-muted-strong);
+  overflow-wrap: anywhere;
+}
+
+.subs > li {
+  padding-block: var(--space-2);
+  border-top: var(--border-width-thin) solid var(--color-border-subtle);
+}
+
+.more {
+  display: flex;
+}

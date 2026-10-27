@@ -1,0 +1,50 @@
+/* A wide, invisible hit area over the item column's end edge, with a hairline that lights up on
+   hover, focus and drag. It overlaps the detail column only, so the item column's scrollbar stays free. */
+.splitter {
+  position: relative;
+  display: none;
+  width: var(--size-splitter);
+  margin-inline-end: calc(var(--size-splitter) * -1);
+  z-index: var(--layer-sticky);
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.splitter::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--border-width-thin);
+  background: var(--color-border-subtle);
+  transition:
+    width var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard);
+}
+
+.splitter:active::after {
+  width: var(--border-width-thick);
+  background: var(--color-scrollbar-active);
+}
+
+@media (hover: hover) {
+  .splitter:hover::after {
+    width: var(--border-width-thick);
+    background: var(--color-scrollbar-active);
+  }
+}
+
+.splitter:focus-visible {
+  outline: none;
+}
+
+.splitter:focus-visible::after,
+.splitter[data-dragging='true']::after {
+  width: var(--border-width-thick);
+  background: var(--color-accent);
+}
+
+@media (min-width: 72rem) {
+  .splitter {
+    display: block;
+  }
+}

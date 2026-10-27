@@ -1,0 +1,51 @@
+/* Links are told apart by colour, never an underline; hover and press shift to the text colour. */
+.link {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.link:active {
+  color: var(--color-text);
+}
+
+@media (hover: hover) {
+  .link:hover {
+    color: var(--color-text);
+  }
+}
+
+/* Source pictures keep their own size, scaled crisply; pixel art stays sharp. */
+.image {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  image-rendering: pixelated;
+}
+
+/* In a tile the picture is the subject: scaled up to a sprite frame, keeping its shape. Small sizes are
+   for running text only; mobs aren't recognisable below 64px. */
+.image[data-size='tile'],
+.image[data-size='lead'] {
+  width: auto;
+  height: var(--size-sprite-lg);
+  margin-inline-end: var(--space-2);
+}
+
+.image[data-size='lead'] {
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.mark {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.mark[data-mark='yes'] {
+  color: var(--color-status-positive);
+}
+
+.mark[data-mark='no'] {
+  color: var(--color-text-muted);
+}

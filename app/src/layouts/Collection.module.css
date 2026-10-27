@@ -1,0 +1,203 @@
+.collection {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.header {
+  padding: var(--space-4) var(--space-4) 0;
+}
+
+.tabs {
+  position: sticky;
+  top: 0;
+  z-index: var(--layer-sticky);
+  padding: 0 var(--space-4);
+  background: var(--color-bg-canvas);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+}
+
+.filtersHead {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--size-control);
+  padding-inline-end: var(--space-2);
+  color: var(--color-text-muted-strong);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  list-style: none;
+  cursor: pointer;
+}
+
+.filtersHead::-webkit-details-marker {
+  display: none;
+}
+
+.filters[open] .whenClosed,
+.filters:not([open]) .whenOpen {
+  display: none;
+}
+
+.filtersHead:active {
+  color: var(--color-accent);
+}
+
+@media (hover: hover) {
+  .filtersHead:hover {
+    color: var(--color-accent);
+  }
+}
+
+.badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: var(--size-icon-md);
+  height: var(--size-icon-md);
+  padding-inline: var(--space-1);
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+  font-size: var(--text-xs);
+  line-height: var(--leading-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.filtersBody {
+  padding-top: var(--space-2);
+}
+
+.results {
+  padding: 0 var(--space-4) var(--space-8);
+}
+
+/* Columns are wide enough for the longest one-word name (Frogamorphosis) without splitting it. */
+.results[data-mode='grid'] {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, calc(var(--size-tile-min) * 1.1)), 1fr));
+  gap: var(--space-2);
+}
+
+.results[data-mode='list'] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.results[data-mode='table'] {
+  overflow-x: auto;
+}
+
+@container (min-width: 40rem) {
+  .header,
+  .tabs,
+  .controls,
+  .results {
+    padding-inline: var(--space-6);
+  }
+
+  .results[data-mode='grid'] {
+    gap: var(--space-3);
+  }
+}
+
+/* Groups: one after another with clear space between, each under a header like a file manager's. */
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: 0 var(--space-4) var(--space-8);
+}
+
+.groups .results {
+  padding: 0;
+}
+
+@container (min-width: 40rem) {
+  .groups {
+    padding-inline: var(--space-6);
+  }
+}
+
+.groupHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--size-control);
+  margin-bottom: var(--space-3);
+  list-style: none;
+  cursor: pointer;
+}
+
+.groupHead::-webkit-details-marker {
+  display: none;
+}
+
+.groupHead:focus-visible {
+  outline-offset: var(--border-width-thick);
+  border-radius: var(--radius-sm);
+}
+
+.chevron {
+  display: inline-flex;
+  color: var(--color-text-muted);
+}
+
+.group[open] .whenClosed,
+.group:not([open]) .whenOpen {
+  display: none;
+}
+
+.whenOpen,
+.whenClosed {
+  display: inline-flex;
+}
+
+.groupTitle {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--text-xl);
+  line-height: var(--leading-xl);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--font-tracking-display);
+}
+
+.groupCount {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--size-badge);
+  height: var(--size-badge);
+  padding-inline: var(--space-2);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-tile);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+  font-weight: var(--font-weight-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+.rule {
+  flex: 1;
+  height: var(--border-width-thin);
+  margin-inline: var(--space-2);
+  background: var(--color-border-subtle);
+}
+
+.groupHead:active .groupTitle {
+  color: var(--color-accent);
+}
+
+@media (hover: hover) {
+  .groupHead:hover .groupTitle {
+    color: var(--color-accent);
+  }
+}

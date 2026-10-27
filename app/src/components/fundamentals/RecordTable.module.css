@@ -1,0 +1,89 @@
+/* Inside its container: as many equal columns as fit at the shared record minimum, each record
+   capped at the maximum. Records have no surface of their own, so the container stays one chunk. */
+.records {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--c-shared-record-min)), 1fr));
+  gap: var(--space-6);
+  list-style: none;
+}
+
+.record {
+  max-width: var(--c-shared-record-max);
+  min-width: 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+}
+
+/* Each record is led by its picture and name. */
+.head {
+  padding-bottom: var(--space-3);
+  text-align: start;
+}
+
+/* The picture beside the name and aside: at least 64px, since mobs aren't recognisable smaller. */
+.title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.pics {
+  display: flex;
+  flex: none;
+  gap: var(--space-1);
+}
+
+.words {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.name {
+  font-weight: var(--font-weight-semibold);
+  overflow-wrap: break-word;
+}
+
+.pic {
+  flex: none;
+  width: var(--size-sprite-lg);
+  height: var(--size-sprite-lg);
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.aside {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.row > * {
+  padding: var(--space-2) 0;
+  border-top: var(--border-width-thin) solid var(--color-border-subtle);
+  vertical-align: baseline;
+}
+
+/* Labels take only the room the longest needs, so values line up within a record. */
+.label {
+  width: 1%;
+  padding-inline-end: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+  font-weight: normal;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.value {
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: break-word;
+}

@@ -1,0 +1,19 @@
+{
+  "color": {
+    "text-muted": {
+      "$type": "color",
+      "$value": "{color.text-muted-strong}",
+      "$description": "More contrast: stronger secondary text"
+    },
+    "border": {
+      "$type": "color",
+      "$value": "{color.border-strong}",
+      "$description": "More contrast: stronger boundaries"
+    },
+    "border-subtle": {
+      "$type": "color",
+      "$value": "{color.border-strong}",
+      "$description": "More contrast: dividers become boundaries"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  padding: 0;
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.hint {
+  max-width: var(--size-measure);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+}
+
+.options[data-type='checkbox'] {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--size-sidebar), 1fr));
+}

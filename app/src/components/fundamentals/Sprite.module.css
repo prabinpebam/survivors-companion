@@ -1,0 +1,99 @@
+.frame {
+  position: relative;
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--size-sprite-md);
+  height: var(--size-sprite-md);
+  border-radius: var(--radius-none);
+}
+
+.frame[data-size='sm'] {
+  width: var(--size-sprite-sm);
+  height: var(--size-sprite-sm);
+}
+
+.frame[data-size='lg'] {
+  width: var(--size-sprite-lg);
+  height: var(--size-sprite-lg);
+}
+
+.frame[data-size='xl'] {
+  width: var(--size-sprite-xl);
+  height: var(--size-sprite-xl);
+}
+
+/* Wide art keeps its own shape: the frame is as wide as the token and as tall as the picture. */
+.frame[data-size='banner'] {
+  width: var(--size-sprite-banner);
+  max-width: 100%;
+  height: auto;
+  min-height: var(--size-sprite-lg);
+  border-radius: var(--radius-md);
+  overflow: clip;
+}
+
+.frame[data-size='banner'] .img {
+  width: 100%;
+  height: auto;
+}
+
+/* A picture as content: as wide as its container, at the picture's own shape, never cropped. Pixel art
+   scales up with crisp edges. */
+.frame[data-size='cover'] {
+  width: 100%;
+  height: auto;
+  min-height: var(--size-sprite-xl);
+  border-radius: var(--c-shared-tile-radius);
+  overflow: clip;
+}
+
+.frame[data-size='cover'] .img {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.img[data-pixel='true'] {
+  image-rendering: pixelated;
+}
+
+.shape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+  opacity: var(--opacity-scrim);
+}
+
+.letter {
+  position: relative;
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.frame[data-size='lg'] .letter,
+.frame[data-size='xl'] .letter,
+.frame[data-size='banner'] .letter,
+.frame[data-size='cover'] .letter {
+  font-size: var(--text-xl);
+}
+
+.frame[data-kind='weapon'] { color: var(--color-kind-weapon); }
+.frame[data-kind='evolution'] { color: var(--color-kind-evolution); }
+.frame[data-kind='passive'] { color: var(--color-kind-passive); }
+.frame[data-kind='character'] { color: var(--color-kind-character); }
+.frame[data-kind='stage'] { color: var(--color-kind-stage); }
+.frame[data-kind='arcana'] { color: var(--color-kind-arcana); }
+.frame[data-kind='relic'] { color: var(--color-kind-relic); }
+.frame[data-kind='powerup'] { color: var(--color-kind-powerup); }
+.frame[data-kind='secret'] { color: var(--color-kind-secret); }
+.frame[data-kind='secret'] .shape { opacity: 1; }

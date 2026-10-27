@@ -1,0 +1,20 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: var(--size-measure);
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-4);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: var(--size-sprite-lg);
+  height: var(--size-sprite-lg);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-sunken);
+}

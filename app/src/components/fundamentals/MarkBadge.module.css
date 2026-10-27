@@ -1,0 +1,25 @@
+.badge {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-2);
+  border: var(--border-width-thin) solid currentColor;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-raised);
+  font-size: var(--text-xs);
+  line-height: var(--leading-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.badge[data-state='unlocked'] {
+  color: var(--color-status-positive);
+}
+
+.badge[data-state='skipped'] {
+  color: var(--color-text-muted);
+}
+
+.badge[data-compact='true'] {
+  padding: var(--space-0);
+}

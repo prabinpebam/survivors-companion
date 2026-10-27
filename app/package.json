@@ -1,0 +1,28 @@
+{
+  "name": "vs-companion-prototype",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "tokens": "node ../agentic-craft/tools/build-tokens.mjs --src design/tokens --css src/design/tokens.css --md design/tokens-reference.md",
+    "tokens:check": "node ../agentic-craft/tools/build-tokens.mjs --src design/tokens --css src/design/tokens.css --md design/tokens-reference.md --check && node ../agentic-craft/tools/check-tokens.mjs --src design/tokens",
+    "lint:styles": "node ../agentic-craft/tools/lint-styles.mjs src/components src/layouts src/shell",
+    "lint:copy": "node ../agentic-craft/tools/lint-copy.mjs src/copy/en.json src/components src/layouts src/shell src/views --glossary design/copy-glossary.md",
+    "lint:design": "node scripts/check-design.mjs",
+    "data": "node scripts/build-data.mjs",
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "build:pages": "tsc --noEmit && vite build --base=/survivors-companion/",
+    "check": "npm run tokens:check && npm run lint:styles && npm run lint:copy && npm run lint:design && tsc --noEmit"
+  },
+  "dependencies": {
+    "preact": "^10.29.8"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.6",
+    "node-html-parser": "^7.1.0",
+    "pngjs": "^7.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.4"
+  }
+}

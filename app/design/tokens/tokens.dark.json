@@ -1,0 +1,140 @@
+{
+  "color": {
+    "bg": {
+      "canvas": {
+        "$type": "color",
+        "$value": "{p.neutral.950}",
+        "$description": "App background"
+      },
+      "raised": {
+        "$type": "color",
+        "$value": "{p.neutral.900}",
+        "$description": "Cards, sheets, bars"
+      },
+      "sunken": {
+        "$type": "color",
+        "$value": "{p.neutral.975}",
+        "$description": "Wells, inputs, tracks"
+      },
+      "tile": {
+        "$type": "color",
+        "$value": "{p.neutral.875}",
+        "$description": "Content tiles and table headers inside a surface: a quiet step from it"
+      },
+      "selected": {
+        "$type": "color",
+        "$value": "{p.violet.900}",
+        "$description": "Selected chip, tile, row"
+      }
+    },
+    "text": {
+      "$type": "color",
+      "$value": "{p.neutral.30}",
+      "$description": "Text and numbers on every surface"
+    },
+    "text-muted": {
+      "$type": "color",
+      "$value": "{p.neutral.400}",
+      "$description": "Secondary text and units"
+    },
+    "text-muted-strong": {
+      "$type": "color",
+      "$value": "{p.neutral.150}",
+      "$description": "Secondary text when more contrast is asked for"
+    },
+    "text-on-accent": {
+      "$type": "color",
+      "$value": "{p.violet.950}",
+      "$description": "Text on an accent fill"
+    },
+    "accent": {
+      "$type": "color",
+      "$value": "{p.violet.300}",
+      "$description": "Links, active controls, selected marks"
+    },
+    "focus": {
+      "$type": "color",
+      "$value": "{p.violet.300}",
+      "$description": "The focus ring"
+    },
+    "border": {
+      "$type": "color",
+      "$value": "{p.neutral.550}",
+      "$description": "Meaningful boundaries: inputs, tiles"
+    },
+    "border-strong": {
+      "$type": "color",
+      "$value": "{p.neutral.400}",
+      "$description": "Boundaries when more contrast is asked for"
+    },
+    "border-subtle": {
+      "$type": "color",
+      "$value": "{p.neutral.850}",
+      "$description": "Decorative dividers only; never carries meaning"
+    },
+    "status": {
+      "positive": {
+        "$type": "color",
+        "$value": "{p.green.300}",
+        "$description": "Higher, done, marked"
+      }
+    },
+    "kind": {
+      "weapon": {
+        "$type": "color",
+        "$value": "{p.rust.300}",
+        "$description": "Weapon mark (diamond)"
+      },
+      "passive": {
+        "$type": "color",
+        "$value": "{p.blue.300}",
+        "$description": "Passive item mark (circle)"
+      },
+      "evolution": {
+        "$type": "color",
+        "$value": "{p.purple.300}",
+        "$description": "Evolution mark (star)"
+      },
+      "character": {
+        "$type": "color",
+        "$value": "{p.teal.300}",
+        "$description": "Character mark (shield)"
+      },
+      "stage": {
+        "$type": "color",
+        "$value": "{p.olive.300}",
+        "$description": "Stage mark (square)"
+      },
+      "arcana": {
+        "$type": "color",
+        "$value": "{p.magenta.300}",
+        "$description": "Arcana mark (card)"
+      },
+      "relic": {
+        "$type": "color",
+        "$value": "{p.gold.300}",
+        "$description": "Relic mark (hexagon)"
+      },
+      "powerup": {
+        "$type": "color",
+        "$value": "{p.orange.300}",
+        "$description": "PowerUp mark (triangle)"
+      },
+      "secret": {
+        "$type": "color",
+        "$value": "{p.neutral.450}",
+        "$description": "Secret mark (keyhole)"
+      }
+    },
+    "scrollbar": {
+      "$type": "color",
+      "$value": "{p.neutral.700}",
+      "$description": "Scrollbar thumb at rest; decorative, never the only cue"
+    },
+    "scrollbar-active": {
+      "$type": "color",
+      "$value": "{p.neutral.500}",
+      "$description": "Scrollbar thumb and resize handle while hovered, focused or dragged"
+    }
+  }
+}

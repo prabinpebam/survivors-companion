@@ -1,0 +1,119 @@
+.head {
+  position: relative;
+  padding: 0;
+  border-bottom: var(--border-width-thin) solid var(--color-border-subtle);
+  background: var(--color-bg-tile);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+  text-align: start;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.head[data-pinned='true'] {
+  position: sticky;
+  left: 0;
+  z-index: var(--layer-sticky);
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  width: 100%;
+  min-height: var(--size-control);
+  padding: var(--space-2) var(--space-3);
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+
+.head[data-numeric='true'] .sort {
+  flex-direction: row-reverse;
+}
+
+.head[aria-sort] .sort {
+  color: var(--color-text);
+}
+
+.sort:focus-visible {
+  outline-offset: calc(var(--border-width-thick) * -1);
+}
+
+.sort:active {
+  background: var(--color-bg-selected);
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dir {
+  display: inline-flex;
+  flex: none;
+  color: var(--color-accent);
+  opacity: 0;
+}
+
+.dir[data-on='true'] {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .sort:hover {
+    color: var(--color-text);
+  }
+
+  .sort:hover .dir:not([data-on]) {
+    color: var(--color-text-muted);
+    opacity: 1;
+  }
+}
+
+/* A wide, invisible grip on the column's right edge, with a hairline that lights up. */
+.edge {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: calc(var(--size-splitter) / -2);
+  z-index: var(--layer-sticky);
+  width: var(--size-splitter);
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.edge::after {
+  content: '';
+  position: absolute;
+  inset-block: var(--space-2);
+  inset-inline-start: 50%;
+  width: var(--border-width-thin);
+  background: var(--color-border);
+}
+
+.edge:active::after,
+.edge:focus-visible::after,
+.head[data-resizing='true'] .edge::after {
+  inset-block: 0;
+  width: var(--border-width-thick);
+  background: var(--color-accent);
+}
+
+.edge:focus-visible {
+  outline: none;
+}
+
+.head:last-child .edge {
+  inset-inline-end: 0;
+}
+
+@media (hover: hover) {
+  .edge:hover::after {
+    inset-block: 0;
+    width: var(--border-width-thick);
+    background: var(--color-scrollbar-active);
+  }
+}

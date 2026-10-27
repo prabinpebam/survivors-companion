@@ -1,0 +1,100 @@
+{
+  "$comment": "Codex collections as data: the source page shown as its overview, which kinds each tab lists, its facets, sorts, groupings (defaultGroup: the grouping a tab opens with, as the source splits it; picking None is remembered), views (and the default per tab), the picture size in details, the picture in the inspector (headerPicture: cover shows wide art full width as the first content under the name, instead of an icon beside it) and table columns. Views render these; nothing about a tab is hard-coded.",
+  "collections": [
+    {
+      "id": "weapons",
+      "page": "Weapons",
+      "kinds": ["weapon", "evolution"],
+      "facets": ["pack", "type", "mark"],
+      "sorts": ["name", "order", "rarity", "pack"],
+      "groups": ["type", "pack", "mark", "name"],
+      "views": ["grid", "list", "table", "details"],
+      "defaultView": "grid",
+      "columns": ["name", "type", "pack", "stats.damage", "stats.cooldown", "stats.amount", "stats.area", "stats.pierce", "maxLevel", "mark"],
+      "facts": ["type", "pack", "stats.damage", "stats.cooldown"]
+    },
+    {
+      "id": "passives",
+      "page": "Passive items",
+      "kinds": ["passive"],
+      "facets": ["pack", "mark"],
+      "sorts": ["name", "order", "rarity", "pack"],
+      "groups": ["stat", "pack", "mark", "name"],
+      "views": ["grid", "list", "table", "details"],
+      "defaultView": "grid",
+      "columns": ["name", "pack", "stat", "perLevel", "maxEffect", "maxLevel", "mark"],
+      "facts": ["stat", "perLevel", "maxEffect"]
+    },
+    {
+      "id": "characters",
+      "page": "Characters",
+      "kinds": ["character"],
+      "facets": ["pack", "mark"],
+      "sorts": ["order", "name", "pack"],
+      "groups": ["pack", "mark", "name"],
+      "views": ["grid", "list", "table", "details"],
+      "defaultView": "grid",
+      "columns": ["name", "pack", "startingWeapons", "cost", "mark"],
+      "facts": ["pack", "startingWeapons"]
+    },
+    {
+      "id": "stages",
+      "page": "Stages",
+      "kinds": ["stage"],
+      "facets": ["pack", "stageType", "mark"],
+      "sorts": ["order", "name", "pack"],
+      "groups": ["stageType", "pack", "mark", "name"],
+      "views": ["grid", "list", "table", "details"],
+      "defaultView": "details",
+      "detailsPicture": "banner",
+      "headerPicture": "cover",
+      "columns": ["name", "stageType", "pack", "timeLimit", "mark"],
+      "facts": ["stageType", "pack"]
+    },
+    {
+      "id": "arcanas",
+      "page": "Arcanas",
+      "kinds": ["arcana"],
+      "facets": ["arcanaType", "pack", "mark"],
+      "sorts": ["order", "name"],
+      "groups": ["arcanaType", "pack", "mark", "name"],
+      "defaultGroup": "arcanaType",
+      "views": ["grid", "list", "table", "details"],
+      "defaultView": "grid",
+      "columns": ["name", "arcanaType", "pack", "unlock", "mark"],
+      "facts": ["arcanaType", "pack"]
+    },
+    {
+      "id": "relics",
+      "page": "Relics",
+      "kinds": ["relic"],
+      "facets": ["pack", "mark"],
+      "sorts": ["order", "name", "pack"],
+      "groups": ["pack", "mark", "name"],
+      "views": ["grid", "list", "table", "details"],
+      "defaultView": "grid",
+      "columns": ["name", "pack", "mark"],
+      "facts": ["pack"]
+    },
+    {
+      "id": "powerups",
+      "page": "PowerUps",
+      "kinds": ["powerup"],
+      "facets": ["mark"],
+      "sorts": ["order", "name"],
+      "groups": ["mark", "name"],
+      "views": ["grid", "list", "table", "details"],
+      "defaultView": "grid",
+      "columns": ["name", "maxRank", "bonus", "cost", "mark"],
+      "facts": ["maxRank", "bonus"]
+    }
+  ],
+  "pairings": { "page": "Evolution", "kinds": ["weapon", "evolution", "passive"] },
+  "nav": [
+    { "id": "home", "icon": "home", "path": "/" },
+    { "id": "codex", "icon": "codex", "path": "/codex/weapons" },
+    { "id": "unlocks", "icon": "unlocks", "path": "/unlocks" },
+    { "id": "builds", "icon": "builds", "path": "/builds" },
+    { "id": "progress", "icon": "progress", "path": "/progress" }
+  ]
+}

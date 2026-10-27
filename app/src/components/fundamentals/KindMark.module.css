@@ -1,0 +1,21 @@
+.mark {
+  flex: none;
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+  fill: currentColor;
+}
+
+.mark[data-size='md'] {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+}
+
+.mark[data-kind='weapon'] { color: var(--color-kind-weapon); }
+.mark[data-kind='evolution'] { color: var(--color-kind-evolution); }
+.mark[data-kind='passive'] { color: var(--color-kind-passive); }
+.mark[data-kind='character'] { color: var(--color-kind-character); }
+.mark[data-kind='stage'] { color: var(--color-kind-stage); }
+.mark[data-kind='arcana'] { color: var(--color-kind-arcana); }
+.mark[data-kind='relic'] { color: var(--color-kind-relic); }
+.mark[data-kind='powerup'] { color: var(--color-kind-powerup); }
+.mark[data-kind='secret'] { color: var(--color-kind-secret); }

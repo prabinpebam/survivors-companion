@@ -1,0 +1,79 @@
+/* Compact: the page scrolls; the detail is a bottom sheet. Medium (40rem+): the frame fills the
+   viewport, nav and main sit side by side and main scrolls on its own; the detail is a side sheet.
+   Expanded (72rem+): a view with a detail becomes two columns, the items (resizable) and the detail,
+   each with its own scroll. Main is a size container, so its contents adapt to the column's width. */
+.shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 100dvh;
+}
+
+.skip {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: var(--layer-toast);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-raised);
+  transform: translateY(-200%);
+}
+
+.skip:focus-visible {
+  transform: none;
+}
+
+.nav,
+.detail {
+  display: contents;
+}
+
+.main {
+  min-width: 0;
+  container-type: inline-size;
+  padding-bottom: calc(var(--space-16) + env(safe-area-inset-bottom));
+}
+
+.main:focus-visible {
+  outline: none;
+}
+
+@media (min-width: 40rem) {
+  .shell {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .nav {
+    display: block;
+    min-height: 0;
+  }
+
+  .main {
+    min-height: 0;
+    padding-bottom: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+}
+
+@media (min-width: 72rem) {
+  .shell[data-split='true'] {
+    grid-template-columns:
+      auto clamp(var(--size-list-min), var(--shell-list, var(--size-list)), var(--size-list-max)) auto
+      minmax(0, 1fr);
+  }
+
+  .detail {
+    display: block;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: var(--color-bg-raised);
+    /* Its own stacking context, so the resize handle stays on top of the docked detail. */
+    isolation: isolate;
+  }
+}

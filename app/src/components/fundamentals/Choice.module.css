@@ -1,0 +1,15 @@
+.choice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--c-shared-control-height);
+  font-size: var(--text-md);
+  cursor: pointer;
+}
+
+.input {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+  margin: 0;
+  accent-color: var(--color-accent);
+}

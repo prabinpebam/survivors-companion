@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Survivors companion (prototype)</title>
+    <script>
+      try {
+        var s = JSON.parse(localStorage.getItem('vsc.prefs.v1') || '{}').scheme;
+        if (s === 'light' || s === 'dark') document.documentElement.setAttribute('data-scheme', s);
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/survivors-companion/assets/index-DRmr260S.js"></script>
+    <link rel="stylesheet" crossorigin href="/survivors-companion/assets/index-CdgEJtzg.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

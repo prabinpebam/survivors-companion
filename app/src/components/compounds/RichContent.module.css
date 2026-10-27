@@ -1,0 +1,281 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-width: 0;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+.p,
+.quote,
+.list {
+  max-width: var(--size-measure);
+  overflow-wrap: anywhere;
+}
+
+.note {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.quote {
+  padding-inline-start: var(--space-3);
+  border-inline-start: var(--border-width-thick) solid var(--color-border);
+  color: var(--color-text-muted-strong);
+  font-style: italic;
+}
+
+.h {
+  margin-top: var(--space-6);
+  font-size: var(--text-subhead);
+  line-height: var(--leading-subhead);
+  font-weight: var(--font-weight-semibold);
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-inline-start: var(--space-6);
+  list-style: disc;
+}
+
+.list[data-ordered='true'] {
+  list-style: decimal;
+}
+
+.list .list {
+  margin-top: var(--space-2);
+  list-style: circle;
+}
+
+.more {
+  display: flex;
+}
+
+.frame {
+  max-width: 100%;
+  overflow-x: auto;
+  border: var(--border-width-thin) solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-raised);
+}
+
+.table {
+  min-width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+}
+
+.table th,
+.table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--border-width-thin) solid var(--color-border-subtle);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table thead th {
+  background: var(--color-bg-tile);
+  color: var(--color-text-muted-strong);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+.table tbody th {
+  color: var(--color-text-muted-strong);
+  font-weight: var(--font-weight-medium);
+}
+
+/* A header row inside the body (a second row of icons) reads like the table's own header. */
+.table tbody tr[data-head='true'] > th {
+  background: var(--color-bg-tile);
+  vertical-align: bottom;
+}
+
+.table [data-glyphs] {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* The item a combination grid is about, spanning its rows: shown at tile size, never squeezed. */
+.table [data-glyphs='item'] {
+  min-width: calc(var(--size-sprite-lg) + var(--space-3) * 2);
+}
+
+.table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+/* A combination grid: its item beside one rounded table per band, all on one quiet tile. */
+.combo {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--c-shared-tile-radius);
+  background: var(--color-bg-tile);
+}
+
+.comboItem {
+  display: grid;
+  place-items: center;
+  padding-inline: var(--space-2);
+}
+
+.bands {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.band {
+  border-radius: var(--radius-md);
+  background: var(--color-bg-raised);
+  overflow: clip;
+}
+
+.band .table {
+  width: 100%;
+}
+
+.band .table thead th {
+  background: none;
+  white-space: normal;
+  vertical-align: middle;
+}
+
+.sub {
+  display: block;
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+  font-weight: normal;
+}
+
+/* Tiles size to their content and share the row, so a value is never split mid-word to fit. */
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.fact {
+  display: flex;
+  flex: 1 1 calc(var(--size-tile-min) * 1.2);
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 100%;
+  padding: var(--space-4);
+  border-radius: var(--c-shared-tile-radius);
+  background: var(--color-bg-tile);
+}
+
+.fact[data-wide='true'] {
+  flex-basis: 100%;
+}
+
+.factLabel,
+.altLabel {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+}
+
+.value {
+  font-size: var(--text-lg);
+  line-height: var(--leading-lg);
+  font-weight: var(--font-weight-semibold);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: break-word;
+}
+
+.value[data-named='true'],
+.fact[data-wide='true'] .value {
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+}
+
+.fact[data-wide='true'] .value {
+  font-weight: var(--font-weight-medium);
+}
+
+.alt {
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+/* The tiles' hints, once each, after the tiles: name, then what it means. */
+.notes {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-3) var(--space-5);
+  max-width: var(--size-measure);
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.noteRow {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+}
+
+.noteName {
+  color: var(--color-text-muted-strong);
+  font-weight: var(--font-weight-medium);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--size-tile-min), 1fr));
+  gap: var(--space-5);
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.thumb,
+.picture {
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-tile);
+  image-rendering: pixelated;
+}
+
+.thumb {
+  width: 100%;
+  height: var(--size-thumb);
+}
+
+.picture {
+  width: auto;
+  height: auto;
+  max-height: calc(var(--size-thumb) * 3);
+  align-self: flex-start;
+}
+
+.caption {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+  overflow-wrap: anywhere;
+}

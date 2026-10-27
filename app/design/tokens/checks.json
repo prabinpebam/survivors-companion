@@ -1,0 +1,440 @@
+{
+  "$comment": "Contrast pairs check-tokens.mjs holds in both theme contexts. The *-strong roles are what the more-contrast modifier switches to.",
+  "contrast": [
+    {
+      "fg": "color.text",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.text-muted",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.text-muted-strong",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.accent",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.status.positive",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.weapon",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.passive",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.evolution",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.character",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.stage",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.arcana",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.relic",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.powerup",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.secret",
+      "bg": "color.bg.canvas",
+      "min": 4.5
+    },
+    {
+      "fg": "color.focus",
+      "bg": "color.bg.canvas",
+      "min": 3
+    },
+    {
+      "fg": "color.border",
+      "bg": "color.bg.canvas",
+      "min": 3
+    },
+    {
+      "fg": "color.border-strong",
+      "bg": "color.bg.canvas",
+      "min": 3
+    },
+    {
+      "fg": "color.text",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.text-muted",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.text-muted-strong",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.accent",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.status.positive",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.weapon",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.passive",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.evolution",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.character",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.stage",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.arcana",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.relic",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.powerup",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.secret",
+      "bg": "color.bg.raised",
+      "min": 4.5
+    },
+    {
+      "fg": "color.focus",
+      "bg": "color.bg.raised",
+      "min": 3
+    },
+    {
+      "fg": "color.border",
+      "bg": "color.bg.raised",
+      "min": 3
+    },
+    {
+      "fg": "color.border-strong",
+      "bg": "color.bg.raised",
+      "min": 3
+    },
+    {
+      "fg": "color.text",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.text-muted",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.text-muted-strong",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.accent",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.status.positive",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.weapon",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.passive",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.evolution",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.character",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.stage",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.arcana",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.relic",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.powerup",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.secret",
+      "bg": "color.bg.sunken",
+      "min": 4.5
+    },
+    {
+      "fg": "color.focus",
+      "bg": "color.bg.sunken",
+      "min": 3
+    },
+    {
+      "fg": "color.border",
+      "bg": "color.bg.sunken",
+      "min": 3
+    },
+    {
+      "fg": "color.border-strong",
+      "bg": "color.bg.sunken",
+      "min": 3
+    },
+    {
+      "fg": "color.text",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.text-muted",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.text-muted-strong",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.accent",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.status.positive",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.weapon",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.passive",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.evolution",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.character",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.stage",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.arcana",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.relic",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.powerup",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.secret",
+      "bg": "color.bg.selected",
+      "min": 4.5
+    },
+    {
+      "fg": "color.focus",
+      "bg": "color.bg.selected",
+      "min": 3
+    },
+    {
+      "fg": "color.border",
+      "bg": "color.bg.selected",
+      "min": 3
+    },
+    {
+      "fg": "color.border-strong",
+      "bg": "color.bg.selected",
+      "min": 3
+    },
+    {
+      "fg": "color.text-on-accent",
+      "bg": "color.accent",
+      "min": 4.5
+    },
+    {
+      "fg": "color.text-muted-strong",
+      "bg": "color.bg.raised",
+      "min": 7
+    },
+    {
+      "fg": "color.text",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.text-muted",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.text-muted-strong",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.accent",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.status.positive",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.weapon",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.passive",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.evolution",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.character",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.stage",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.arcana",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.relic",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.powerup",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.kind.secret",
+      "bg": "color.bg.tile",
+      "min": 4.5
+    },
+    {
+      "fg": "color.focus",
+      "bg": "color.bg.tile",
+      "min": 3
+    },
+    {
+      "fg": "color.border",
+      "bg": "color.bg.tile",
+      "min": 3
+    },
+    {
+      "fg": "color.border-strong",
+      "bg": "color.bg.tile",
+      "min": 3
+    }
+  ]
+}
