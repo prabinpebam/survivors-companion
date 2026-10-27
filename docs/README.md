@@ -66,6 +66,14 @@ The reader is local-only; this process does not provide automatic startup after 
 The archive remains unchanged; open workspace-root `resources/README.md` in VS Code for its inventory.
 Local archive authorities are named as workspace paths rather than broken reader routes:
 the docs host deliberately does not serve the full dataset. Imported wiki text is CC BY-NC-SA 3.0;
-game art/audio and site assets have separate rights. The proposed open-source code license is
-not a relicense of the dataset. See [readiness and publication constraints](research/data-readiness.md)
-before discussing a public release.
+game art/audio and site assets have separate rights. This project's documents, text and data are shared under the same licence, CC BY-NC-SA 3.0
+(legal code in the repository's `LICENSES/CC-BY-NC-SA-3.0.txt`); its code is MIT licensed
+(`LICENSE`). Game art is excluded from both and no licence to it is granted. See
+[readiness and publication constraints](research/data-readiness.md) for the rights background.
+
+## Licence
+
+These documents are licensed
+[CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/), adapting material from the
+[Vampire Survivors Wiki](https://vampire.survivors.wiki) and its contributors. Unofficial fan
+project; not affiliated with poncle or the wiki.

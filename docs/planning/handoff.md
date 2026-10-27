@@ -112,11 +112,15 @@ site is <https://prabinpebam.github.io/survivors-companion/>, with the docs at `
   without `resources/` and `app/.npmrc`, with the lockfile pointed at the public registry and
   the built site in `site/`.
 - The [Pages workflow](../../.github/workflows/pages.yml) then deploys `site/` and `docs/`. It
-  builds nothing; the data comes from the archive.
+  builds nothing; the data comes from the archive. Pages is set to build from GitHub Actions
+  (turned on 2026-10-27 after the first run failed with "Get Pages site failed"); the first
+  publish is live and checked: home, data, docs and a deep link.
 - `main` and the 2.8 GB archive are never pushed.
 - Publish only when the owner asks.
 - Still open:
-  - the code has no licence, so it isn't open source yet;
+  - the project is dual licensed at the owner's request (2026-10-27): code under MIT
+    (`LICENSE`), and text, data and docs under CC BY-NC-SA 3.0, the wiki's own licence
+    (`LICENSES/CC-BY-NC-SA-3.0.txt`). Home and Settings → About show the credit and both licences;
   - the game art ("Icon rights" above) is published at the owner's request, and the
     monogram fallback can replace it.
 

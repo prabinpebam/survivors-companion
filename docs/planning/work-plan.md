@@ -216,6 +216,21 @@ in light and dark. Fixed on the way:
   and picture URLs use it. Pages answers deep links with a copy of `index.html` (`404.html`).
   Settings → About links to the wiki and the CC BY-NC-SA licence. Checked on a Pages-like local
   server: home, tabs, peeks, back, a deep link, pictures and the docs at `/docs/`.
+- Mark toggles in the peek header (owner feedback: the text buttons sat low in the body). "Mark
+  unlocked" (open lock) and "Mark skipped" (skip sign) are icon toggles before close; their words
+  are the accessible names and tooltips, and the mark's words show next to the kind and pack.
+  Pressing the pressed one clears the mark. Badges on tiles and rows use the same two icons. On
+  narrow peeks the picture and toggles share the first row, with the title below.
+- Unlocked tiles stand out in the Codex grid (owner feedback): a tile marked unlocked has a pale
+  green background and a green border (`color.bg.positive`, `color.border-positive`; a deep green
+  in dark mode, the strong status green with more contrast). Hover deepens the border, the open
+  peek's selected look still wins, and the open-lock badge stays as the text twin. Contrast checks
+  hold every text colour on the tint at 4.5:1 or more and the border at 3:1.
+- Licences (owner, 2026-10-27): code is MIT (`LICENSE`); text, data and docs take the wiki's
+  licence, CC BY-NC-SA 3.0 (`LICENSES/CC-BY-NC-SA-3.0.txt`, the legal code verbatim). The README,
+  the docs landing page, `package.json` (MIT) and a `rel="license"` link say so; Home and
+  Settings → About show "Credits and licence" (adapted from the wiki, the CC licence's three
+  conditions, code under MIT, game art excluded, links to the wiki and both licences).
 
 Checks held: `npm run check`, `npm run build`, two Playwright scripts (two-column behaviour and
 progressive reveal; arrange menus and table columns) and a 10-screen sweep at 320, 390, 800, 1100,

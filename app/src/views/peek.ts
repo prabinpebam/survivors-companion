@@ -88,10 +88,21 @@ export function peekOverlay(c: ViewContext, ref: string, load: DetailLoad | null
   const cover = !hidden && g.sprite !== null && def !== undefined && 'headerPicture' in def && def.headerPicture === 'cover';
   // An arcana's own type (Arcana or Darkana) says more than its kind.
   const kindLine = e.kind === 'arcana' && e.arcanaType ? e.arcanaType : g.kindLabel;
+  const mark = markOf(c, e.ref);
+  const set = (m: MarkState) => () => store.setMark(e.ref, mark.state === m ? null : m);
+  const marks = {
+    label: t('mark.actions'),
+    state: mark.state,
+    stateLabel: mark.label,
+    actions: [
+      { id: 'unlocked', label: t('mark.done'), icon: 'unlocks' as const, pressed: mark.state === 'unlocked', onPress: set('unlocked') },
+      { id: 'skipped', label: t('mark.skip'), icon: 'skip' as const, pressed: mark.state === 'skipped', onPress: set('skipped') },
+    ],
+  };
   const hero: Block[] = [
     {
       type: 'PeekHeader',
-      props: { name: g.name, kind: g.kind, meta: hidden ? [] : [kindLine, c.ix.packName.get(e.pack) ?? e.pack], sprite: g.sprite, hidden, icon: !cover, headingId: 'peek-title', close: { label: t('peek.close'), href: closeHref } },
+      props: { name: g.name, kind: g.kind, meta: hidden ? [] : [kindLine, c.ix.packName.get(e.pack) ?? e.pack], sprite: g.sprite, hidden, icon: !cover, headingId: 'peek-title', close: { label: t('peek.close'), href: closeHref }, marks: hidden ? undefined : marks },
     },
   ];
   if (hidden) {
@@ -101,8 +112,6 @@ export function peekOverlay(c: ViewContext, ref: string, load: DetailLoad | null
       facts: [], actions: [], proof: [],
     };
   }
-  const mark = markOf(c, e.ref);
-  const set = (m: MarkState) => () => store.setMark(e.ref, mark.state === m ? null : m);
   const list = facts(c, e);
   return {
     layout: 'Inspector',
@@ -115,20 +124,7 @@ export function peekOverlay(c: ViewContext, ref: string, load: DetailLoad | null
     answer: answer(c, e),
     ...detailSections(c, e, load),
     facts: [...(list.length ? [{ type: 'FactList', props: { facts: list } } as Block] : []), ...(e.caption ? [{ type: 'ProseBlock', props: { items: [{ text: e.caption }] } } as Block] : [])],
-    actions: [
-      {
-        type: 'MarkActions',
-        props: {
-          label: t('mark.actions'),
-          state: mark.state,
-          stateLabel: mark.label,
-          actions: [
-            { id: 'unlocked', label: t('mark.done'), icon: 'check', pressed: mark.state === 'unlocked', onPress: set('unlocked') },
-            { id: 'skipped', label: t('mark.skip'), icon: 'skip', pressed: mark.state === 'skipped', onPress: set('skipped') },
-          ],
-        },
-      },
-    ],
+    actions: [],
     proof: e.source ? sourceProof(e.source) : [],
   };
 }

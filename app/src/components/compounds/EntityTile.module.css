@@ -15,6 +15,11 @@
   transition: border-color var(--duration-fast) var(--ease-standard);
 }
 
+.tile[data-mark='unlocked'] {
+  border-color: var(--color-border-positive);
+  background: var(--color-bg-positive);
+}
+
 .tile[aria-current='true'] {
   border-color: var(--color-accent);
   background: var(--color-bg-selected);
@@ -28,6 +33,10 @@
 @media (hover: hover) {
   .tile:hover {
     border-color: var(--color-border);
+  }
+
+  .tile[data-mark='unlocked']:hover {
+    border-color: var(--color-status-positive);
   }
 }
 

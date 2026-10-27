@@ -14,14 +14,28 @@ This is an unofficial fan project. It is not affiliated with or endorsed by ponc
 
 ## Content and licences
 
-- **Wiki text and data** come from the [Vampire Survivors Wiki](https://vampire.survivors.wiki),
-  licensed [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/). Every item in
-  the app links to its source page. The app's adaptation of that content is shared under the same
-  licence, for non-commercial use.
+The project is dual licensed:
+
+- **Code** (the app's source in `app/`, its scripts, design tokens and checks, and `tools/` and
+  workflow files) is licensed under the [MIT License](LICENSE).
+- **Content** (wiki text and data, the generated data in `site/data`, and the documents in
+  `docs/`) is licensed under
+  [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-nc-sa/3.0/)
+  (CC BY-NC-SA 3.0), the same licence as the wiki it adapts. The legal code is in
+  [LICENSES/CC-BY-NC-SA-3.0.txt](LICENSES/CC-BY-NC-SA-3.0.txt). You may share and adapt it for
+  non-commercial purposes if you give credit, link to the licence, say what you changed, and
+  share your changes under the same licence.
+
+Also:
+
+- **Wiki text and data** come from the [Vampire Survivors Wiki](https://vampire.survivors.wiki)
+  and its contributors. Every item in the app links to its source page, and the app's Home and
+  Settings → About show the credit and licences.
 - **Game art** (sprites, pictures) belongs to poncle and the other rights holders. It is shown
-  here for reference only, and no licence to it is granted.
+  here for reference only. It isn't covered by either licence, and no licence to it is granted.
 - **Vendored components** in the documentation reader carry their own licences
-  ([docs/shell/vendor](docs/shell/vendor/README.md)).
+  ([docs/shell/vendor](docs/shell/vendor/README.md)), as do the kit submodules (`slate/`,
+  `agentic-craft/`, `agent-orchestration/`).
 
 ## Repository layout
 

@@ -14,6 +14,11 @@
       "$type": "color",
       "$value": "{color.border-strong}",
       "$description": "More contrast: dividers become boundaries"
+    },
+    "border-positive": {
+      "$type": "color",
+      "$value": "{color.status.positive}",
+      "$description": "More contrast: a marked tile's boundary in the strong green"
     }
   }
 }

@@ -14,7 +14,6 @@ import { EntityTable } from '../components/compounds/EntityTable';
 import { EntityTile } from '../components/compounds/EntityTile';
 import { FactList } from '../components/compounds/FactList';
 import { FilterBar } from '../components/compounds/FilterBar';
-import { MarkActions } from '../components/compounds/MarkActions';
 import { PageHeader } from '../components/compounds/PageHeader';
 import { PeekHeader } from '../components/compounds/PeekHeader';
 import { ProseBlock } from '../components/compounds/ProseBlock';
@@ -42,7 +41,6 @@ export const REGISTRY = {
   EntityTile,
   FactList,
   FilterBar,
-  MarkActions,
   PageHeader,
   PeekHeader,
   ProseBlock,

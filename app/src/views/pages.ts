@@ -50,8 +50,23 @@ export function homeView(c: ViewContext): ViewSpec {
           { type: 'Button', props: { href: '/progress', icon: 'progress', children: t('home.openProgress') } },
         ],
       },
+      { key: 'licence', heading: t('about.credits'), wide: true, blocks: licenceBlocks(c) },
     ],
   };
+}
+
+const LICENCE_URL = 'https://creativecommons.org/licenses/by-nc-sa/3.0/';
+const CODE_LICENCE_URL = 'https://github.com/prabinpebam/survivors-companion/blob/main/LICENSE';
+
+/** The attribution and licence notice the wiki's CC BY-NC-SA 3.0 asks for, plus the code's MIT licence, on Home and in Settings. */
+function licenceBlocks(c: ViewContext): Block[] {
+  return [
+    { type: 'Text', props: { as: 'p', children: t('about.credit') } },
+    { type: 'Text', props: { variant: 'muted', as: 'p', children: t('about.art') } },
+    { type: 'Button', props: { variant: 'quiet', href: c.ix.codex.snapshot.source, external: true, children: t('about.wiki') } },
+    { type: 'Button', props: { variant: 'quiet', href: LICENCE_URL, external: true, children: t('about.licence') } },
+    { type: 'Button', props: { variant: 'quiet', href: CODE_LICENCE_URL, external: true, children: t('about.codeLicence') } },
+  ];
 }
 
 const SOON: Record<string, IconName> = { unlocks: 'unlocks', builds: 'builds', progress: 'progress' };
@@ -129,9 +144,7 @@ export function settingsView(c: ViewContext): ViewSpec {
         heading: t('settings.about'),
         blocks: [
           { type: 'Text', props: { as: 'p', children: t('app.unofficial') } },
-          { type: 'Text', props: { variant: 'muted', as: 'p', children: c.ix.codex.snapshot.licence } },
-          { type: 'Button', props: { variant: 'quiet', href: c.ix.codex.snapshot.source, external: true, children: t('about.wiki') } },
-          { type: 'Button', props: { variant: 'quiet', href: 'https://creativecommons.org/licenses/by-nc-sa/3.0/', external: true, children: t('about.licence') } },
+          ...licenceBlocks(c),
         ],
       },
     ],

@@ -177,7 +177,11 @@
   "status:source.snapshot": "Source snapshot: {date}",
   "button:source.visit": "Open source",
   "button:about.wiki": "Open the wiki",
-  "button:about.licence": "Read the licence",
+  "button:about.licence": "Read content licence",
+  "button:about.codeLicence": "Read code licence",
+  "heading:about.credits": "Credits and licence",
+  "any:about.credit": "Text and data are adapted from the Vampire Survivors Wiki and shared under the same licence, CC BY-NC-SA 3.0: give credit, don’t use them commercially, and share changes under the same terms. The app’s code is under the MIT License.",
+  "any:about.art": "Game art belongs to poncle and its other owners and isn’t covered by either licence.",
 
   "heading:home.startHere": "Start here",
   "heading:home.marks": "Your marks",

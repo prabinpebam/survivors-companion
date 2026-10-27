@@ -2,6 +2,7 @@
   "name": "vs-companion-prototype",
   "private": true,
   "version": "0.0.1",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "tokens": "node ../agentic-craft/tools/build-tokens.mjs --src design/tokens --css src/design/tokens.css --md design/tokens-reference.md",

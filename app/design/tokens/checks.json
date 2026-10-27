@@ -435,6 +435,36 @@
       "fg": "color.border-strong",
       "bg": "color.bg.tile",
       "min": 3
+    },
+    {
+      "fg": "color.text",
+      "bg": "color.bg.positive",
+      "min": 4.5
+    },
+    {
+      "fg": "color.text-muted",
+      "bg": "color.bg.positive",
+      "min": 4.5
+    },
+    {
+      "fg": "color.status.positive",
+      "bg": "color.bg.positive",
+      "min": 4.5
+    },
+    {
+      "fg": "color.accent",
+      "bg": "color.bg.positive",
+      "min": 4.5
+    },
+    {
+      "fg": "color.border-positive",
+      "bg": "color.bg.positive",
+      "min": 3
+    },
+    {
+      "fg": "color.border-positive",
+      "bg": "color.bg.raised",
+      "min": 3
     }
   ]
 }

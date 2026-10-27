@@ -25,6 +25,11 @@
         "$type": "color",
         "$value": "{p.violet.900}",
         "$description": "Selected chip, tile, row"
+      },
+      "positive": {
+        "$type": "color",
+        "$value": "{p.green.900}",
+        "$description": "A tile the person marked unlocked"
       }
     },
     "text": {
@@ -71,6 +76,11 @@
       "$type": "color",
       "$value": "{p.neutral.850}",
       "$description": "Decorative dividers only; never carries meaning"
+    },
+    "border-positive": {
+      "$type": "color",
+      "$value": "{p.green.400}",
+      "$description": "Boundary of a tile marked unlocked"
     },
     "status": {
       "positive": {

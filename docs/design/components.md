@@ -70,10 +70,10 @@ Made only from fundamentals and tokens.
 
 | Compound | Shows | Built from | Used in |
 |---|---|---|---|
-| EntityTile | Glance in a grid: sprite, name, kind, one mark, optional pairing chip | Sprite, Text, KindBadge, ProgressMark or StatusBadge | Codex, Unlocks, Progress, What's new, Home |
+| EntityTile | Glance in a grid: sprite, name, kind, one mark, optional pairing chip. A tile marked unlocked has a pale green background and green border (`color.bg.positive`, `color.border-positive`) | Sprite, Text, KindBadge, ProgressMark or StatusBadge | Codex, Unlocks, Progress, What's new, Home |
 | EntityRow | Glance in a list | Sprite, Text, KindBadge, ProgressMark | Search, List view |
 | EntityChip | Inline glance | Sprite, Text | Inside text-like places (plans, breakdowns) |
-| EntityHero | Identity at the top of a peek or page | Sprite, Text, KindBadge, ProgressMark | Peek, Entity page |
+| EntityHero | Identity at the top of a peek or page, with the mark toggles as icon buttons (open lock: unlocked; skip sign: skipped) before close and the mark's words in the meta line. Built as `PeekHeader` | Sprite, Text, KindBadge, ProgressMark | Peek, Entity page |
 | EvolutionPath | Input-first recipe: inputs, levels, result, conditions | Sprite, Text, LevelPips, StatusBadge | Peek, Entity page, Pairings, Run companion |
 | PairingCard | One pairing in either direction | Sprite, Text, LevelPips, KindBadge | Pairings |
 | PrereqPath | Conditions with sources, alternatives and the person's marks | Text, ProgressMark, StatusBadge, Link | Entity page |
